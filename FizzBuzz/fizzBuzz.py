@@ -14,5 +14,5 @@ def fizzBuzz(num):
         return "Buzz"
     elif num % 3 == 0:
         return "Fizz"
-    else:
-        return str(num)
+    # else: <- nie jest to blad, natomiast lepiej jest po prostu nie pisac jezeli nie jest faktycznie ważne - po prostu kod jest "prostszy i krótszy"
+    return str(num)
