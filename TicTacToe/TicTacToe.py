@@ -41,27 +41,43 @@ class TicTacToe:
 
     def is_player_win(self, player):
         ''' Poziome linie '''
-        if self.board[0][0] == player and self.board[0][1] == player and self.board[0][2] == player:
-            return True
-        if self.board[1][0] == player and self.board[1][1] == player and self.board[1][2] == player:
-            return True
-        if self.board[2][0] == player and self.board[2][1] == player and self.board[2][2] == player:
-            return True
+        for x in range(3):
+            if self.board[0][x] == self.board[1][x] and self.board[1][x] == self.board[2][x]:
+                return True
+            ''' Pionowe linie '''
+            if self.board[x][0] == self.board[x][1] and self.board[x][1] == self.board[x][2]:
+                return True
 
-        ''' Pionowe linie '''
-        if self.board[0][0] == player and self.board[1][0] == player and self.board[2][0] == player:
-            return True
-        if self.board[0][1] == player and self.board[1][1] == player and self.board[2][1] == player:
-            return True
-        if self.board[0][2] == player and self.board[1][2] == player and self.board[2][2] == player:
-            return True
-
-        ''' Przekatne '''
-        if self.board[0][0] == player and self.board[1][1] == player and self.board[2][2] == player:
-            return True
-        if self.board[2][0] == player and self.board[1][1] == player and self.board[0][2] == player:
-            return True
-
+            ''' Przekatne '''
+            if self.board[0][0] == player and self.board[1][1] == player and self.board[2][2] == player:
+                return True
+            if self.board[2][0] == player and self.board[1][1] == player and self.board[0][2] == player:
+                return True
 
         return False
 
+    """       
+       if self.board[0][0] == player and self.board[0][1] == player and self.board[0][2] == player:
+           return True
+       if self.board[1][0] == player and self.board[1][1] == player and self.board[1][2] == player:
+           return True
+       if self.board[2][0] == player and self.board[2][1] == player and self.board[2][2] == player:
+           return True
+
+       ''' Pionowe linie '''
+       if self.board[0][0] == player and self.board[1][0] == player and self.board[2][0] == player:
+           return True
+       if self.board[0][1] == player and self.board[1][1] == player and self.board[2][1] == player:
+           return True
+       if self.board[0][2] == player and self.board[1][2] == player and self.board[2][2] == player:
+           return True
+
+       ''' Przekatne '''
+       if self.board[0][0] == player and self.board[1][1] == player and self.board[2][2] == player:
+           return True
+       if self.board[2][0] == player and self.board[1][1] == player and self.board[0][2] == player:
+           return True
+
+
+       return False
+"""
