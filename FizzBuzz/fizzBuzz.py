@@ -8,11 +8,17 @@ dla zadanej liczby sprawdza wszystkie warunki
 '''
 
 def fizzBuzz(num):
-    if num % 3 == 0 and num % 5 == 0:
+    fizz = num % 3 == 0
+    buzz = num % 5 == 0
+
+    if fizz and buzz:
         return "FizzBuzz"
-    elif num % 5 == 0:
+    elif buzz:
         return "Buzz"
-    elif num % 3 == 0:
+    elif fizz:
         return "Fizz"
     # else: <- nie jest to blad, natomiast lepiej jest po prostu nie pisac jezeli nie jest faktycznie ważne - po prostu kod jest "prostszy i krótszy"
     return str(num)
+'''
+kill me
+'''
