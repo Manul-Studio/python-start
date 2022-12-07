@@ -21,6 +21,8 @@ Moze miec wartosci:
 
 
 """
+
+
 class TicTacToe:
 
     def __init__(self):
@@ -39,45 +41,40 @@ class TicTacToe:
     def set_spot(self, row, col, player):
         self.board[row][col] = player
 
+    def __is_all_fields_same(self, a, b, c, player):
+        # todo napisac sprawdzanie zgodnie z lemurza logika dwóch łapek :D
+        # poza polami A B i C trzeba tez dodatkowo sprawdzic czy sa tez naszego gracza bo sprawdzamy "czy konkretny gracz wygral"
+        return True
+
     def is_player_win(self, player):
-        ''' Poziome linie '''
+
         for x in range(3):
-            if self.board[0][x] == self.board[1][x] and self.board[1][x] == self.board[2][x]:
+            ''' Poziome linie '''
+            if self.__is_all_fields_same(self.board[0][x], self.board[1][x], self.board[2][x], player):
                 return True
+
             ''' Pionowe linie '''
-            if self.board[x][0] == self.board[x][1] and self.board[x][1] == self.board[x][2]:
+            if self.__is_all_fields_same(self.board[x][0], self.board[x][1], self.board[x][2], player):
                 return True
 
-            ''' Przekatne '''
-            if self.board[0][0] == player and self.board[1][1] == player and self.board[2][2] == player:
-                return True
-            if self.board[2][0] == player and self.board[1][1] == player and self.board[0][2] == player:
-                return True
+        ''' Przekatne '''
+        if self.__is_all_fields_same(self.board[0][0], self.board[1][1], self.board[2][2], player):
+            return True
 
+        if self.__is_all_fields_same(self.board[2][0], self.board[1][1], self.board[0][2], player):
+            return True
+
+        '''Nie udalo sie wykryc zwycięstwa gracza '''
         return False
 
-    """       
-       if self.board[0][0] == player and self.board[0][1] == player and self.board[0][2] == player:
-           return True
-       if self.board[1][0] == player and self.board[1][1] == player and self.board[1][2] == player:
-           return True
-       if self.board[2][0] == player and self.board[2][1] == player and self.board[2][2] == player:
-           return True
+    def draw_board(self):
+        # todo Narysowac prawdziwa plansze :D
+        # player1 = "X"
+        # player2 = "O"
+        # puste pole "-"
 
-       ''' Pionowe linie '''
-       if self.board[0][0] == player and self.board[1][0] == player and self.board[2][0] == player:
-           return True
-       if self.board[0][1] == player and self.board[1][1] == player and self.board[2][1] == player:
-           return True
-       if self.board[0][2] == player and self.board[1][2] == player and self.board[2][2] == player:
-           return True
-
-       ''' Przekatne '''
-       if self.board[0][0] == player and self.board[1][1] == player and self.board[2][2] == player:
-           return True
-       if self.board[2][0] == player and self.board[1][1] == player and self.board[0][2] == player:
-           return True
-
-
-       return False
-"""
+        print() #enter
+        print('O|-|O')
+        print('-|X|-')
+        print('-|-|O')
+        print() #enter
