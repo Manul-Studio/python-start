@@ -42,11 +42,9 @@ class TicTacToe:
         self.board[row][col] = player
 
     def __is_all_fields_same(self, a, b, c, player):
-        # todo napisac sprawdzanie zgodnie z lemurza logika dwóch łapek :D
-        # poza polami A B i C trzeba tez dodatkowo sprawdzic czy sa tez naszego gracza bo sprawdzamy "czy konkretny gracz wygral"
-        for x in range(3):
-            if a == b and b == c and c == player:
-                return True
+        if a == b and b == c and c == player:
+            return True
+        return False
 
 
     def is_player_win(self, player):
