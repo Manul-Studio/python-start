@@ -46,7 +46,6 @@ class TicTacToe:
             return True
         return False
 
-
     def is_player_win(self, player):
 
         for x in range(3):
