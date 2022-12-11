@@ -45,15 +45,9 @@ class TicTacToe:
         # todo napisac sprawdzanie zgodnie z lemurza logika dwóch łapek :D
         # poza polami A B i C trzeba tez dodatkowo sprawdzic czy sa tez naszego gracza bo sprawdzamy "czy konkretny gracz wygral"
         for x in range(3):
-            if self.board[0][x] == self.board[1][x] and self.board[1][x] == self.board[2][x] and self.board[2][x] == player:
-                return True
-            if self.board[x][0] == self.board[x][1] and self.board[x][1] == self.board[x][2] and self.board[x][2] == player:
+            if a == b and b == c and c == player:
                 return True
 
-        if self.board[0][0] == self.board[1][1] and self.board[1][1] == self.board[2][2] and self.board[2][2] == player:
-            return True
-        if self.board[2][0] == self.board[1][1] and self.board[1][1] == self.board[0][2] and self.board[0][2] == player:
-            return True
 
     def is_player_win(self, player):
 
