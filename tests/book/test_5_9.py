@@ -2,11 +2,24 @@ from unittest import TestCase
 
 
 class Zadanie_5_9:
+    def __init__(self):
+        self.liczby = []
+
     def wprowadz_liczbe(self, liczba):
+        self.liczby.append(liczba)
         return True
 
     def pokaz_wynik_5_9_1(self):
-        return 'do napisania wariant 1'
+        suma = 0
+        ile = 0
+        srednia = 0
+        for x in self.liczby:
+            suma += x
+            ile += 1
+
+        srednia = suma/ile
+
+        return str(suma) + " " + str(ile) + " " + str(srednia)
 
     def pokaz_wynik_5_9_2(self):
         return 'do napisania wariant 2'
