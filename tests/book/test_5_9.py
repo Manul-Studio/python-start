@@ -22,7 +22,17 @@ class Zadanie_5_9:
         return str(suma) + " " + str(ile) + " " + str(srednia)
 
     def pokaz_wynik_5_9_2(self):
-        return 'do napisania wariant 2'
+        suma = 0
+        ile = 0
+        for x in self.liczby:
+            suma += x
+            ile += 1
+
+        maxi = max(self.liczby)
+        mini = min(self.liczby)
+
+        return str(suma) + " " + str(ile) + " " + str(maxi) + " " + str(mini)
+
 
     '''
     Command-line interface
