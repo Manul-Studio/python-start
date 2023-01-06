@@ -24,12 +24,20 @@ class Zadanie_5_9:
     def pokaz_wynik_5_9_2(self):
         suma = 0
         ile = 0
+        maxi = self.liczby[0]
+        mini = self.liczby[0]
         for x in self.liczby:
+            if x > maxi:
+                maxi = x
+            if x < mini:
+                mini = x
             suma += x
             ile += 1
 
+        '''
         maxi = max(self.liczby)
         mini = min(self.liczby)
+        '''
 
         return str(suma) + " " + str(ile) + " " + str(maxi) + " " + str(mini)
 
