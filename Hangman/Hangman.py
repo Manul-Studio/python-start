@@ -5,6 +5,7 @@ class Hangman:
 
     def __init__(self, haslo):
         self.haslo = haslo
+        self.trafione = ''
 
     '''
     Gracz wprowadza znak jaki chce zgadywać
@@ -13,6 +14,11 @@ class Hangman:
     '''
 
     def zgadujeZnak(self, znak):
+        zlicz = 0
+        for litera in self.haslo:
+            if litera == znak:
+                zlicz = zlicz + 1
+        return zlicz
         return 0
 
     '''
