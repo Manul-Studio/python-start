@@ -19,7 +19,6 @@ class Hangman:
             if litera == znak:
                 zlicz = zlicz + 1
         return zlicz
-        return 0
 
     '''
     Zwraca nasze hasło ze zgadnietymi znakami :)
