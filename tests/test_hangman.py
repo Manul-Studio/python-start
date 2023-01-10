@@ -17,6 +17,6 @@ class Test(TestCase):
         self.assertEqual(hangman.zgadujeZnak('b'), 1)
         self.assertEqual(hangman.trafione, 'ab')
 
-        return 1
         self.assertEqual(hangman.hasloZeZgadnietymi(), 'ba_a_a')
+        return 1
         self.assertEqual(hangman.czyGraczWygral(), False)

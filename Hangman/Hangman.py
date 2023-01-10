@@ -18,6 +18,8 @@ class Hangman:
         for litera in self.haslo:
             if litera == znak:
                 zlicz = zlicz + 1
+        if zlicz > 0:
+                self.trafione = self.trafione + znak
         return zlicz
 
     '''
@@ -26,7 +28,13 @@ class Hangman:
     '''
 
     def hasloZeZgadnietymi(self):
-        return self.haslo
+        odpowiedz = ''
+        for x in self.haslo:
+            if x in self.trafione:
+                odpowiedz += x
+            else:
+                odpowiedz += '_'
+        return odpowiedz
 
     '''
     Czy nasz gracz zgadl caly wyraz?
