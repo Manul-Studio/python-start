@@ -24,7 +24,7 @@ for line in fhand:
     start = line.find(': ')
     liczba = float(line[start+1:])
     zlicz = zlicz + 1
-
     total = total + liczba
-    srednia = total / zlicz
+
+srednia = total / zlicz
 print('średni poziom pewności spamu: ', srednia)
