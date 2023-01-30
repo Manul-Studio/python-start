@@ -3,12 +3,25 @@ from unittest import TestCase
 import math
 
 class KotStudent:
-    def __init__(self, r):
+    def __init__(self, r, h):
         self.promien = r
+        self.wysokosc = h
+
 
     def poleKola(self):
-        pole = math.pi * (self.promien * self.promien)
+        '''pole = math.pi * (self.promien * self.promien)'''
+        pole = math.pi * pow(self.promien, 2)
         return round(pole, 2)
+
+    def objetoscWalca(self):
+        objetoscw = self.poleKola() * self.wysokosc
+        return round(objetoscw, 2)
+
+    def objetoscStozka(self):
+        objetoscs = 1/3 * self.objetoscWalca()
+        return round(objetoscs, 2)
+
+
 
 
 class Test(TestCase):
@@ -41,6 +54,16 @@ class Test(TestCase):
         kot = KotStudent(101)
 
         self.assertEqual(kot.poleKola(), 32047.39)
+
+    def test_kotstudent7walec(self):
+        kot = KotStudent(3, 3)
+
+        self.assertEqual(kot.objetoscWalca(), 84.81)
+
+    def test_kotstudent8stozek(self):
+        kot = KotStudent(5, 5)
+
+        self.assertEqual(kot.objetoscStozka(), 130.9)
 
 
 
